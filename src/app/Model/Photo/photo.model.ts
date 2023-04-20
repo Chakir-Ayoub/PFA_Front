@@ -1,4 +1,4 @@
-import { Terrain } from "../Model/Terrain/terrain.model";
+import { Terrain } from "../Terrain/terrain.model";
 
 export class Photo {
     public photoid: string;

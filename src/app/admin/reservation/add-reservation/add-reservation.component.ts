@@ -36,7 +36,7 @@ export class AddReservationComponent {
     if (this.empForm.valid) {
       if (this.data) {
         this._ResrService
-          .updateReservation(this.data.id, this.empForm.value)
+          .updateReservation(this.data.idreservation, this.empForm.value)
           .subscribe({
             next: (val: any) => {
               this._coreService.openSnackBar('Reservation detail updated!');

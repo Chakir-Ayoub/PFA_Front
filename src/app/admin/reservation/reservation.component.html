@@ -33,6 +33,11 @@
         </ng-container> eight: 50px;">
   
   
+        <ng-container matColumnDef="clientid">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>  Client </th>
+          <td mat-cell *matCellDef="let row"> {{row.clientid.email}}</td>
+        </ng-container>
+        
         <ng-container matColumnDef="etat">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>  Etat </th>
           <td mat-cell *matCellDef="let row"> {{row.etat}}</td>

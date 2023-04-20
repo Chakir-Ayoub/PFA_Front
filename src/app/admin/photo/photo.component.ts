@@ -5,7 +5,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Observable } from 'rxjs';
-import { Photo } from 'src/app/Photo/photo.model';
+import { Photo } from 'src/app/Model/Photo/photo.model';
 import { CoreService } from 'src/app/core/core.service';
 import { PhotoService } from 'src/app/services/Photo/photo.service';
 import { AddPhotoComponent } from './add-photo/add-photo.component';

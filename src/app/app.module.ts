@@ -44,7 +44,9 @@ import { UpdateAbonnementComponent } from './admin/abonnement/update-abonnement/
 import { ReservationComponent } from './admin/reservation/reservation.component';
 import { AddReservationComponent } from './admin/reservation/add-reservation/add-reservation.component';
 import { UpdateReservationComponent } from './admin/reservation/update-reservation/update-reservation.component';
-
+import { ClubComponent } from './admin/club/club.component';
+import { AddClubComponent } from './admin/club/add-club/add-club.component';
+import { UpdateClubComponent } from './admin/club/update-club/update-club.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,6 +67,9 @@ import { UpdateReservationComponent } from './admin/reservation/update-reservati
     ReservationComponent,
     AddReservationComponent,
     UpdateReservationComponent,
+    ClubComponent,
+    AddClubComponent,
+    UpdateClubComponent,
   ],
   imports: [
     BrowserModule,

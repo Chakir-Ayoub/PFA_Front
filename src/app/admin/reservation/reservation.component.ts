@@ -18,6 +18,7 @@ export class ReservationComponent {
     'idreservation',
     'date',
     'etat',
+    'clientid',
     'action'
   ];
   dataSource!:MatTableDataSource<any>

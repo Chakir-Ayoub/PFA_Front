@@ -11,6 +11,13 @@
                 <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
               </mat-form-field>
+
+              <mat-form-field appearance="fill"   >
+                <mat-label>Client</mat-label>
+                <select matNativeControl required formControlName="clientid" >
+                  <option *ngFor="let clientt of client" [ngValue]="clientt"> {{clientt.firstName}}</option>
+                </select>
+            </mat-form-field>
         </div>
 
         <div class="row">

@@ -41,6 +41,9 @@ import { MatListModule } from '@angular/material/list';
 import { AbonnementComponent } from './admin/abonnement/abonnement.component';
 import { AddAbonnementComponent } from './admin/abonnement/add-abonnement/add-abonnement.component';
 import { UpdateAbonnementComponent } from './admin/abonnement/update-abonnement/update-abonnement.component';
+import { ReservationComponent } from './admin/reservation/reservation.component';
+import { AddReservationComponent } from './admin/reservation/add-reservation/add-reservation.component';
+import { UpdateReservationComponent } from './admin/reservation/update-reservation/update-reservation.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +62,9 @@ import { UpdateAbonnementComponent } from './admin/abonnement/update-abonnement/
     AbonnementComponent,
     AddAbonnementComponent,
     UpdateAbonnementComponent,
+    ReservationComponent,
+    AddReservationComponent,
+    UpdateReservationComponent,
   ],
   imports: [
     BrowserModule,

@@ -68,7 +68,7 @@ export class UpdateAbonnementComponent {
     if (this.empForm.valid) {
       if (this.data) {
         this._AbonnService
-          .updateAbonnement(this.data.id, this.empForm.value)
+          .updateAbonnement(this.data.idabonnement, this.empForm.value)
           .subscribe({
             next: (val: any) => {
               this._coreService.openSnackBar('Abonnement detail updated!');

@@ -7,6 +7,7 @@ import { TerrainComponent } from './admin/terrain/terrain.component';
 import { PackeComponent } from './admin/packe/packe.component';
 import { PhotoComponent } from './admin/photo/photo.component';
 import { AbonnementComponent } from './admin/abonnement/abonnement.component';
+import { ReservationComponent } from './admin/reservation/reservation.component';
 
 
 const routes: Routes = [{
@@ -15,7 +16,8 @@ const routes: Routes = [{
     {path:'terrain',component:TerrainComponent},
     {path:'packe',component:PackeComponent},
     {path:'photo',component:PhotoComponent},
-    {path:'abonnement',component:AbonnementComponent}
+    {path:'abonnement',component:AbonnementComponent},
+    {path:'reservation',component:ReservationComponent}
   ] 
 }];
 @NgModule({

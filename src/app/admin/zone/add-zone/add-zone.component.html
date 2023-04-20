@@ -1,5 +1,5 @@
 <div mat-dialog-title>
-    <h1>Club Form</h1>
+    <h1>Ville Form</h1>
 </div>
 <form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
     <div mat-dialog-content class="content">
@@ -7,6 +7,12 @@
             <mat-form-field appearance="outline">
                 <mat-label>Nom</mat-label>
                 <input matInput type="text" placeholder="Ex. Packe" formControlName="nom">
+            </mat-form-field>
+            <mat-form-field appearance="fill"   >
+                <mat-label>Ville</mat-label>
+                <select matNativeControl required formControlName="ville" >
+                  <option *ngFor="let ville of ville" [ngValue]="ville">{{ville.nom}}</option>
+                </select>
             </mat-form-field>
         </div>
 

@@ -1,5 +1,5 @@
 <div mat-dialog-title>
-    <h1>Club Form</h1>
+    <h1>Ville Form</h1>
 </div>
 <form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
     <div mat-dialog-content class="content">
@@ -7,6 +7,10 @@
             <mat-form-field appearance="outline">
                 <mat-label>Nom</mat-label>
                 <input matInput type="text" placeholder="Ex. Packe" formControlName="nom">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>code Postale</mat-label>
+                <input matInput placeholder="Ex. 50" type="number" formControlName="codePostale">
             </mat-form-field>
         </div>
 

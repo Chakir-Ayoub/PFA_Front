@@ -1,52 +1,50 @@
 import { Component, ViewChild } from '@angular/core';
-import { AddClubComponent } from './add-club/add-club.component';
-import { MatTableDataSource } from '@angular/material/table';
-import { UpdateClubComponent } from './update-club/update-club.component';
-import { CoreService } from 'src/app/core/core.service';
-import { ClubService } from 'src/app/services/Club/club.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { CoreService } from 'src/app/core/core.service';
+import { ZoneService } from 'src/app/services/Zone/zone.service';
+import { AddZoneComponent } from './add-zone/add-zone.component';
+import { UpdateZoneComponent } from './update-zone/update-zone.component';
 
 @Component({
-  selector: 'app-club',
-  templateUrl: './club.component.html',
-  styleUrls: ['./club.component.scss']
+  selector: 'app-zone',
+  templateUrl: './zone.component.html',
+  styleUrls: ['./zone.component.scss']
 })
-export class ClubComponent {
-  displayedColumns: string[] = [
-    'idclub',
+export class ZoneComponent {
+  displayedColumns: string[]=[
+    'zoneid',
     'nom',
-    'action',
+    'ville',
+    'action'
   ];
-  dataSource!: MatTableDataSource<any>;
+  dataSource!:MatTableDataSource<any>
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-
-  constructor(
-    private _dialog: MatDialog,
-    private _empService: ClubService,
-    private _coreService: CoreService
-  ) {}
-
+  constructor( private _dialog: MatDialog,
+    private _ZoneService: ZoneService,
+    private _coreService: CoreService){}
   ngOnInit(): void {
-    this.getEmployeeList();
+    this.getPackeListe();
   }
 
+  
   openAddEditEmpForm() {
-    const dialogRef = this._dialog.open(AddClubComponent);
+    const dialogRef = this._dialog.open(AddZoneComponent);
     dialogRef.afterClosed().subscribe({
       next: (val) => {
         if (val) {
-          this.getEmployeeList();
+          this.getPackeListe();
         }
       },
     });
   }
 
-  getEmployeeList() {
-    this._empService.getEmployeeList().subscribe({
+  getPackeListe() {
+    this._ZoneService.getZoneList().subscribe({
       next: (res) => {
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.sort = this.sort;
@@ -55,7 +53,7 @@ export class ClubComponent {
       error: console.log,
     });
   }
-
+  
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -66,26 +64,27 @@ export class ClubComponent {
   }
 
   deleteEmployee(id: string) {
-    this._empService.deleteEmployee(id).subscribe({
+    this._ZoneService.deleteZone(id).subscribe({
       next: (res) => {
-        this._coreService.openSnackBar('Club deleted!', 'done');
-        this.getEmployeeList();
+        this._coreService.openSnackBar('Zone deleted!', 'done');
+        this.getPackeListe();
       },
       error: console.log,
     });
   }
 
   openEditForm(data: any) {
-    const dialogRef = this._dialog.open(AddClubComponent, {
+    const dialogRef = this._dialog.open(UpdateZoneComponent, {
       data,
     });
 
     dialogRef.afterClosed().subscribe({
       next: (val) => {
         if (val) {
-          this.getEmployeeList();
+          this.getPackeListe();
         }
       },
     });
-  }
+  } 
+
 }

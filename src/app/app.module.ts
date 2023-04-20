@@ -47,6 +47,12 @@ import { UpdateReservationComponent } from './admin/reservation/update-reservati
 import { ClubComponent } from './admin/club/club.component';
 import { AddClubComponent } from './admin/club/add-club/add-club.component';
 import { UpdateClubComponent } from './admin/club/update-club/update-club.component';
+import { VilleComponent } from './admin/ville/ville.component';
+import { UpdateVilleComponent } from './admin/ville/update-ville/update-ville.component';
+import { AddVilleComponent } from './admin/ville/add-ville/add-ville.component';
+import { ZoneComponent } from './admin/zone/zone.component';
+import { AddZoneComponent } from './admin/zone/add-zone/add-zone.component';
+import { UpdateZoneComponent } from './admin/zone/update-zone/update-zone.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,6 +76,12 @@ import { UpdateClubComponent } from './admin/club/update-club/update-club.compon
     ClubComponent,
     AddClubComponent,
     UpdateClubComponent,
+    VilleComponent,
+    AddVilleComponent,
+    UpdateVilleComponent,
+    ZoneComponent,
+    AddZoneComponent,
+    UpdateZoneComponent,
   ],
   imports: [
     BrowserModule,

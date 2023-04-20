@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapi.com/css?family=Fredoka&dispaly=swap');
+@import url('https://fonts.googleapi.com/css?family=Material+Icons');
+
+*{
+    font-family:'Inter', sans-serif;
+    box-sizing: border-box;
+    text-decoration:none ;
+}
+
+mat-icon{
+    color:#8997ac;
+    font-family:'Material Icons';
+    vertical-align: middle;
+}
+.top{
+    margin-top: 15px;
+    padding: 8px;
+    margin-left: 160px;
+    font-size: 45px;
+
+}
+.user{
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 50px;
+    img{
+        margin-top: 16px;
+        width: 120px;
+        height: 120px;
+    }
+    .name{
+        color: white;
+    }
+    .mail{
+        margin-top: -16px;
+        color: #8997ac;
+    }
+}
+.menu-head{
+    color:#466be0;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-left: 60px;
+    margin-bottom: 20px;
+}
+.menu-item{
+    margin: 0 10px 0 10px;
+    .menu-button{
+        display: block;
+        
+        padding-right: 2cm;
+        margin-left: 1.3cm;
+        position: relative;
+        display: flex;
+        margin-left: 40px;
+        margin-bottom:10px;
+    }
+    .menu-button span{
+        margin-left: 15px;
+        color: white;
+
+    }
+    .menu-button:hover{
+        background-color: #2c3344;
+       
+    }
+    .menu-button:focus{
+        background-color: #2c3344;
+        
+    }
+}

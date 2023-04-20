@@ -1,0 +1,73 @@
+<div mat-dialog-title>
+    <h1>Terrain Form</h1>
+</div>
+<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Type</mat-label>
+                <input matInput type="text" placeholder="Ex. 7/7" formControlName="type">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Adresse</mat-label>
+                <input matInput placeholder="Ex. Marrakech Massira" formControlName="adresse">
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Attitude</mat-label>
+                <input matInput  placeholder="500.50" formControlName="attitude">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Longitude</mat-label>
+                <input matInput  placeholder="500.50" formControlName="longitude">
+            </mat-form-field>
+
+        </div>
+
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Nom</mat-label>
+                <input matInput placeholder="Ex. Google" formControlName="nom">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Tarif</mat-label>
+                <input matInput placeholder="Ex. 4" type="number" formControlName="tarif">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="fill"   >
+                <mat-label>Club</mat-label>
+                <select matNativeControl required formControlName="club" >
+                  <option *ngFor="let club of clubb" [ngValue]="club">{{club.nom}}</option>
+                </select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill"   >
+                <mat-label>Zone</mat-label>
+                <select matNativeControl required formControlName="zone" >
+                  <option *ngFor="let zone of Zonee" [ngValue]="zone"> {{zone.nom}}</option>
+                </select>
+            </mat-form-field>
+        </div>
+
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>Descriptuon</mat-label>
+                    <textarea matInput placeholder="Ex. Le terrain..." formControlName="descriptuon"></textarea>
+                </mat-form-field>
+
+                <mat-checkbox  formControlName="etat">Etat</mat-checkbox>
+
+
+            </div>
+
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false"  >Cancel</button>
+        <button mat-raised-button color="primary" type="submit">{{data ? 'Update': 'Save'}}</button>
+    </div>
+    
+</form>

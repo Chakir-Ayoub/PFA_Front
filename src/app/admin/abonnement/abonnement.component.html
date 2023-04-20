@@ -1,0 +1,67 @@
+<mat-toolbar class="title-toolbar">
+    <span class="example-spacer">
+      <img src="../assets/imagee/Retro_Vintage_Football_Club_Badge_Logo-removebg-preview.png" width="65" height="1%">
+     
+    </span>
+    <button mat-raised-button (click)="openAddEditEmpForm()">
+      ADD Packe
+    </button>
+</mat-toolbar>
+  
+  
+  
+  <div class="main-body">
+  
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+    </mat-form-field>
+  
+    <div class="table-container">
+      <table mat-table [dataSource]="dataSource" matSort>
+  
+      
+        <ng-container matColumnDef="idabonnement">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+          <td mat-cell *matCellDef="let row"> {{row.idabonnement}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="client">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Client </th>
+            <td mat-cell *matCellDef="let row"> {{row.client.email}}</td>
+        </ng-container>
+  
+
+        <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+            <td mat-cell *matCellDef="let row"> {{row.date}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="packe">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Packe </th>
+            <td mat-cell *matCellDef="let row"> {{row.packe.nom}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+            <td mat-cell *matCellDef="let row">
+              <button mat-icon-button color="primary" (click)="openEditForm(row)">
+                <mat-icon >edite</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="deleteAbonnement(row.idabonnement)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+        </tr>
+      </table>
+  
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+    </div>
+  </div>

@@ -1,0 +1,33 @@
+<div class="navbar">
+    <div class="top">
+        <mat-icon>notifications_none</mat-icon>
+    </div>
+    <div class="user">
+        <img src="https://img.icons8.com/bubbles/512/administrator-male.png" alt="">
+        <h4 class="name">Admin</h4>
+        <p class="mail">admin@gmail.com</p>
+    </div>
+    <div class="menu">
+        <div class="menu-head">
+            <span>Dashboard</span>
+        </div>
+        <div class="menu-item">
+            <button mat-button class="menu-button" [routerLink]="['/packe']">
+                <mat-icon>settings</mat-icon>
+                <span>packe</span>
+            </button>
+            <button mat-button class="menu-button" [routerLink]="['/terrain']">
+                <mat-icon>settings</mat-icon>
+                <span>Terrain</span>
+            </button>
+            <button mat-button class="menu-button" [routerLink]="['/photo']">
+                <mat-icon>settings</mat-icon>
+                <span>photo</span>
+            </button>
+            <button mat-button class="menu-button" [routerLink]="['/abonnement']">
+                <mat-icon>settings</mat-icon>
+                <span>Abonnement</span>
+            </button>
+        </div>
+    </div>
+</div>

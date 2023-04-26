@@ -1,35 +1,4 @@
-<!-- <div>
-    <form action="" method="post" enctype="multipart/form-data">
-        <input type="file">
-    </form>
-    <label>Choose file</label>
-</div> -->
-<!-- <div mat-dialog-title>
-    <h1>Packe Form</h1>
-</div>
-<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
-    <div mat-dialog-content class="content">
-        <div class="row">
-            <mat-form-field>
-                <mat-label>Choose imagee</mat-label>
-                <input type="file"  formControlName="url">
-            </mat-form-field>
 
-            <mat-form-field appearance="fill"   >
-                <mat-label>Club</mat-label>
-                <select matNativeControl required formControlName="club" >
-                  <option *ngFor="let terrr of terr" [ngValue]="terrr">{{terrr.nom}}</option>
-                </select>
-            </mat-form-field>
-        </div>
-
-
-    <div mat-dialog-actions class="action">
-        <button mat-raised-button type="button" [mat-dialog-close]="false"  >Cancel</button>
-        <button mat-raised-button color="primary" type="submit">{{data ? 'Update': 'Save'}}</button>
-    </div>
- </div>
-</form> -->
 <form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
     <div mat-dialog-content class="content">
 <div *ngFor="let progressInfo of progressInfos">

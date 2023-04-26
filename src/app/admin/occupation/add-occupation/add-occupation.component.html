@@ -1,0 +1,55 @@
+<div mat-dialog-title>
+    <h1>Occupation Form</h1>
+</div>
+<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+        <div class="row">
+
+            <mat-form-field appearance="fill">
+                <mat-label>Date</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="date">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+
+
+            <!-- <mat-form-field appearance="fill">
+                <mat-label>Date</mat-label>
+                <input matInput type="datetime-local" placeholder="start Time" required formControlName="heure">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-hint>HH:MM</mat-hint>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field> -->
+
+            <input matInput type="datetime-local" placeholder="start Time" required formControlName="heure">
+
+
+
+        </div>
+
+        <div class="row">
+            <mat-form-field appearance="fill"   >
+                <mat-label>Terrain</mat-label>
+                <select matNativeControl required formControlName="terrain" >
+                  <option *ngFor="let terr of Terr" [ngValue]="terr">{{terr.nom}}</option>
+                </select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill"   >
+                <mat-label>Reservation</mat-label>
+                <select matNativeControl required formControlName="reservation" >
+                  <option *ngFor="let reser of Reser" [ngValue]="reser">{{reser.clientid.firstName}}</option>
+                </select>
+            </mat-form-field>
+        </div>
+
+
+
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false"  >Cancel</button>
+        <button mat-raised-button color="primary" type="submit">{{data ? 'Update': 'Save'}}</button>
+    </div>
+ </div>
+</form>

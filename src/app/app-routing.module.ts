@@ -11,6 +11,7 @@ import { ReservationComponent } from './admin/reservation/reservation.component'
 import { ClubComponent } from './admin/club/club.component';
 import { VilleComponent } from './admin/ville/ville.component';
 import { ZoneComponent } from './admin/zone/zone.component';
+import { OccupationComponent } from './admin/occupation/occupation.component';
 
 
 const routes: Routes = [{
@@ -23,7 +24,8 @@ const routes: Routes = [{
     {path:'reservation',component:ReservationComponent},
     {path:'club',component:ClubComponent},
     {path:'ville',component:VilleComponent},
-    {path:'zone',component:ZoneComponent}
+    {path:'zone',component:ZoneComponent},
+    {path:'occupation',component:OccupationComponent}
   ] 
 }];
 @NgModule({

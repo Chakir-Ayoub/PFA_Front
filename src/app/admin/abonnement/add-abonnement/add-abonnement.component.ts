@@ -23,7 +23,6 @@ export class AddAbonnementComponent implements OnInit {
     private _coreService: CoreService
   ) {
     this.empForm = this._fb.group({
-      idabonnement:'',
       date:'',
       client:null,
       packe:null,

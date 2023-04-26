@@ -80,7 +80,7 @@ export class AddPhotoComponent {
   selectedFiles?: FileList;
   selectedFileNames: string[] = [];
 
-  progressInfos: any;
+  progressInfos: any[] = [];
   message: string[] = [];
 
   previews: string[] = [];

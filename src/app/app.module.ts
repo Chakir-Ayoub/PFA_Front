@@ -53,6 +53,9 @@ import { AddVilleComponent } from './admin/ville/add-ville/add-ville.component';
 import { ZoneComponent } from './admin/zone/zone.component';
 import { AddZoneComponent } from './admin/zone/add-zone/add-zone.component';
 import { UpdateZoneComponent } from './admin/zone/update-zone/update-zone.component';
+import { OccupationComponent } from './admin/occupation/occupation.component';
+import { AddOccupationComponent } from './admin/occupation/add-occupation/add-occupation.component';
+import { UpdateOccupationComponent } from './admin/occupation/update-occupation/update-occupation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -82,6 +85,9 @@ import { UpdateZoneComponent } from './admin/zone/update-zone/update-zone.compon
     ZoneComponent,
     AddZoneComponent,
     UpdateZoneComponent,
+    OccupationComponent,
+    AddOccupationComponent,
+    UpdateOccupationComponent,
   ],
   imports: [
     BrowserModule,

@@ -70,7 +70,7 @@ export class PhotoComponent   {
   deleteEmployee(id: string) {
     this._PhoService.deletePhoto(id).subscribe({
       next: (res) => {
-        this._coreService.openSnackBar('Packe deleted!', 'done');
+        this._coreService.openSnackBar('Photo deleted!', 'done');
         this.getPhotoListe();
       },
       error: console.log,

@@ -65,7 +65,7 @@ export class UpdatePhotoComponent {
       } else {
         this._PhotoService.addPhoto(this.empForm.value).subscribe({
           next: (val: any) => {
-            this._coreService.openSnackBar('Terrain added successfully');
+            this._coreService.openSnackBar('Photo added successfully');
             this._dialogRef.close(true);
           },
           error: (err: any) => {

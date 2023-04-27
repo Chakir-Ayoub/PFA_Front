@@ -73,7 +73,7 @@ export class TerrainComponent implements OnInit {
   deleteEmployee(id: string) {
     this._TerrService.deleteEmployee(id).subscribe({
       next: (res) => {
-        this._coreService.openSnackBar('Club deleted!', 'done');
+        this._coreService.openSnackBar('Terrain deleted!', 'done');
         this.getEmployeeList();
       },
       error: console.log,

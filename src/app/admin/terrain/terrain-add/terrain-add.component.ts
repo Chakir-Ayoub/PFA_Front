@@ -81,7 +81,7 @@ export class TerrainAddComponent implements OnInit {
           .updateEmployee(this.data.id, this.empForm.value)
           .subscribe({
             next: (val: any) => {
-              this._coreService.openSnackBar('Employee detail updated!');
+              this._coreService.openSnackBar('Terrain detail updated!');
               this._dialogRef.close(true);
             },
             error: (err: any) => {
@@ -91,7 +91,7 @@ export class TerrainAddComponent implements OnInit {
       } else {
         this._TerrService.addEmployee(this.empForm.value).subscribe({
           next: (val: any) => {
-            this._coreService.openSnackBar('Employee added successfully');
+            this._coreService.openSnackBar('Terrain added successfully');
             this._dialogRef.close(true);
           },
           error: (err: any) => {

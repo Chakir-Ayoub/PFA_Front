@@ -14,7 +14,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
@@ -56,6 +56,11 @@ import { UpdateZoneComponent } from './admin/zone/update-zone/update-zone.compon
 import { OccupationComponent } from './admin/occupation/occupation.component';
 import { AddOccupationComponent } from './admin/occupation/add-occupation/add-occupation.component';
 import { UpdateOccupationComponent } from './admin/occupation/update-occupation/update-occupation.component';
+import { LoginComponent } from './login/login.component';
+import { NavbarComponent } from './partials/navbar/navbar.component';
+import { PagesNotFoundComponent } from './partials/pages-not-found/pages-not-found.component';
+import { JwtInterceptorInterceptor } from './services/JwtInterceptor/jwt-interceptor.interceptor';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -88,6 +93,9 @@ import { UpdateOccupationComponent } from './admin/occupation/update-occupation/
     OccupationComponent,
     AddOccupationComponent,
     UpdateOccupationComponent,
+    LoginComponent,
+    NavbarComponent,
+    PagesNotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -118,7 +126,13 @@ import { UpdateOccupationComponent } from './admin/occupation/update-occupation/
     MatListModule
 
   ],
-  providers: [TerrainServiceService],
+  providers: [{
+    provide:HTTP_INTERCEPTORS,
+    useClass:JwtInterceptorInterceptor ,
+    multi:true
+  }
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

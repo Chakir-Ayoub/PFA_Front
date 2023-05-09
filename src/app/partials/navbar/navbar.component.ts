@@ -4,11 +4,11 @@ import { AccountServiceService } from 'src/app/services/AccountService/account-s
 import { TokenServiceService } from 'src/app/services/TokenService/token-service.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css']
 })
-export class HomeComponent {
+export class NavbarComponent {
   currentUser:null;
   constructor(private accountService:AccountServiceService,private tokenService:TokenServiceService,private route:Router){}
   ngOnInit(): void {
